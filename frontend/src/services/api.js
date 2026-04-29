@@ -19,7 +19,7 @@ export const searchMovies = async (query) => {
 
 export async function getMovieDetails(id) {
   const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_TMDB_API_KEY}`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
   );
   return res.json();
 }
