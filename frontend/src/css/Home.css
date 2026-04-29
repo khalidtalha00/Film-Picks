@@ -8,6 +8,8 @@
   max-width: 600px;
   margin: 0 auto 2rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   padding: 0 1rem;
   box-sizing: border-box;
@@ -60,16 +62,34 @@
   justify-content: center;
   align-items: flex-start;
   padding: 1rem;
+  /* keep layout contained on small screens */
+  width: 100%;
+}
+
+/* ensure predictable sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* ensure each card keeps a reasonable width instead of stretching 100% */
 .movies-grid > * {
   flex: 0 0 280px;
   max-width: 320px;
-  width: 100%;
+  width: auto; /* changed from 100% so media queries can set 50% correctly */
 }
 
 @media (max-width: 600px) {
+  .movies-grid > * {
+    /* two cards per row (account for gap) */
+    flex: 0 0 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+  }
+}
+
+/* very small phones -> single column */
+@media (max-width: 360px) {
   .movies-grid > * {
     flex: 0 0 100%;
     max-width: 100%;

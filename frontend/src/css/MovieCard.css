@@ -94,6 +94,12 @@
 .movie-info h3 {
   font-size: 1rem;
   margin: 0;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Change to 2 if you want to allow two lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .movie-info p {
@@ -121,4 +127,23 @@
     height: 32px;
     font-size: 1.2rem;
   }
+
+  /* Make the overlay and favorite button permanently visible on mobile */
+  .movie-overlay {
+    opacity: 1;
+  }
+}
+
+/* Ensure the card takes up full height of its container and uses flexbox */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Allow the info section to grow and push standard items to the bottom */
+.movie-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }

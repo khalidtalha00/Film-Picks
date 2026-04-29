@@ -140,3 +140,15 @@ body{
     font-size: 0.95rem;
   }
 }
+
+/* Add this media query to fix the layout on mobile screens */
+@media (max-width: 768px) {
+  .movie-details-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .movie-details-info h1 {
+    font-size: 1.8rem;
+  }
+}
