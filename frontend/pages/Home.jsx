@@ -1,17 +1,17 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import MovieCard from "../src/components/MovieCard";
 import "../src/css/Home.css";
 import { Toaster, toast } from "react-hot-toast";
-import {searchMovies,getPopularMovies} from '../src/services/api'
+import { searchMovies, getPopularMovies } from "../src/services/api";
 
 const Home = () => {
-const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-   const loadPopularMovies = async () => {
+    const loadPopularMovies = async () => {
       try {
         const popularMovies = await getPopularMovies();
         console.log("Popular movies response:", popularMovies); //FOR DEBUG
@@ -28,26 +28,22 @@ const [searchQuery, setSearchQuery] = useState("");
     loadPopularMovies();
   }, []);
 
-  
- async function handleFormSubmit(e) {
+  async function handleFormSubmit(e) {
     e.preventDefault();
     if (searchQuery.trim().length === 0) {
       toast.error("Enter a movie name to search");
     } else {
-      if(loading) return
-      setLoading(true)
+      if (loading) return;
+      setLoading(true);
       try {
-        const searchResults=await searchMovies(searchQuery)
-        setMovies(searchResults)
-        setError(null)
-        
+        const searchResults = await searchMovies(searchQuery);
+        setMovies(searchResults);
+        setError(null);
       } catch (error) {
-        console.log(error)
-        setError("Failed to search movies")
-        
-      }
-      finally{
-        setLoading(false)
+        console.log(error);
+        setError("Failed to search movies");
+      } finally {
+        setLoading(false);
       }
       setSearchQuery("");
     }
@@ -58,6 +54,7 @@ const [searchQuery, setSearchQuery] = useState("");
       <div>
         <Toaster />
       </div>
+
       <form onSubmit={handleFormSubmit} className="search-form ">
         <input
           type="text"
@@ -72,13 +69,19 @@ const [searchQuery, setSearchQuery] = useState("");
           Search
         </button>
       </form>
+      <div className="trending">
+        <h2>Trending Movies🔥</h2>
+      </div>
       {loading && <p>Loading movies...</p>}
       {error && <p className="error">{error}</p>}
       {movies.length === 0 && !loading && <p>No movies found</p>}
       <div className="movies-grid">
         {movies.map(
           (movie) =>
-            (searchQuery === "" || movie.title.toLowerCase().startsWith(searchQuery.toLowerCase())) && (
+            (searchQuery === "" ||
+              movie.title
+                .toLowerCase()
+                .startsWith(searchQuery.toLowerCase())) && (
               <MovieCard movie={movie} key={movie.id} />
             ),
         )}

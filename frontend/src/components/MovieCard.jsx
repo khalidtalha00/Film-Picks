@@ -36,8 +36,8 @@ const MovieCard = ({ movie }) => {
           </div>
         </div>
         <div className="movie-info">
-          <h3>{movie.title}</h3>
-          <p>{movie.release_date?.split("-")[0]}</p>
+          <p id="movie-title">{movie.title}</p>
+          <p id="movie-release">{movie.release_date?.split("-")[0]}</p>
         </div>
       </div>
     </Link>
