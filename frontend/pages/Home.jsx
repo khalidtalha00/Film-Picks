@@ -52,7 +52,14 @@ const Home = () => {
   return (
     <div className="home">
       <div>
-        <Toaster />
+        <Toaster toastOptions={{
+    success: {
+      duration: 2000,
+    },
+    error:{
+      duration:2000
+    }
+  }} />
       </div>
 
       <form onSubmit={handleFormSubmit} className="search-form ">

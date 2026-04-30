@@ -9,6 +9,16 @@ function Favorites() {
   if (favorites.length > 0) {
     return (
       <div className="favorites">
+        <Toaster
+          toastOptions={{
+            success: {
+              duration: 2000,
+            },
+            error: {
+              duration: 2000,
+            },
+          }}
+        />
         <h2>Your Favorites</h2>
         <div className="movies-grid">
           {favorites.map((movie) => (
