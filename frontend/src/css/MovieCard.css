@@ -101,6 +101,12 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   cursor: default;
 }
+@media(max-width:680px) {
+  .list-dropdown{
+    width: 80px;
+  }
+  
+}
 
 .list-dropdown h4 {
   margin-top: 0;
