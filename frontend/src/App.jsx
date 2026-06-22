@@ -5,6 +5,7 @@ import { MovieProvider } from './contexts/movieContext'
 import Home from '../pages/Home'
 import Favourites from '../pages/Favourites'
 import MovieDetails from '../pages/MovieDetails'
+import MyLists from '../pages/MyLists'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/favourites' element={<Favourites />} />
+          <Route path='/lists' element={<MyLists />} />
           <Route path='/movie/:id' element={<MovieDetails />} />
         </Routes>
       </main>

@@ -29,6 +29,9 @@ const Navbar = () => {
           <Link to="/favourites" className="nav-link" onClick={() => setIsOpen(false)}>
             Favourites
           </Link>
+          <Link to="/lists" className="nav-link" onClick={() => setIsOpen(false)}>
+            My Lists
+          </Link>
         </div>
       </nav>
     </>

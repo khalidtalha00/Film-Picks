@@ -1,0 +1,141 @@
+.mylists-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center ;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 80vh;
+}
+
+.mylists-sidebar {
+  flex: 0 0 300px;
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.mylists-sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.create-list-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.create-list-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+}
+
+.create-list-btn {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.mylists-content h2{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.create-list-btn:hover {
+  background-color: #ff6b81;
+}
+
+.lists-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.list-nav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.list-nav-item:hover {
+  background-color: #333;
+}
+
+.list-nav-item.active {
+  background-color: #444;
+  border-left: 4px solid #ff4757;
+}
+
+.list-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete-list-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.5rem;
+}
+
+.delete-list-btn:hover {
+  color: #ff4757;
+}
+
+.no-lists-msg {
+  color: #999;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.mylists-content {
+  flex: 1;
+}
+
+.empty-list, .empty-state-content {
+  text-align: center;
+  margin-top: 4rem;
+  color: #999;
+}
+
+.empty-list p, .empty-state-content h2 {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .mylists-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .mylists-sidebar {
+    flex: auto;
+    width: 100%;
+  }
+}
