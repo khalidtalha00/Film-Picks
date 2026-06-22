@@ -57,9 +57,12 @@ body{
 
 .movie-details-overview {
   line-height: 1.3;
-  text-align:justify;
   margin:35px 0;
   color:#efeaea;
+}
+
+p.movie-details-overview{
+  font-size: 1.3rem;
 }
 
 .movie-details-meta p,strong {
@@ -151,7 +154,15 @@ body{
     gap: 16px;
   }
   
-  .movie-details-info h1 {
-    font-size: 1.8rem;
+
+  @media (max-width:680px) {
+    p.movie-details-overview{
+      font-size: 1rem;
+    }
+
+    .movie-info{
+      font-size: 1.2rem;
+    }
+    
   }
 }
