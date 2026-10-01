@@ -9,6 +9,7 @@ A React-based movie search app that lets users search for movies, view details, 
 - Add and remove movies from favorites
 - Favorites page for saved movies
 - Toast notifications for user feedback
+- Create your own custom lists
 
 ## Screenshots
 
@@ -16,6 +17,7 @@ A React-based movie search app that lets users search for movies, view details, 
 ![Search Results](./screenshots/search-results.png)
 ![Movie Details](./screenshots/movie-details.png)
 ![Favorites Page](./screenshots/favorites.png)
+![Create Custom Lists](./screenshots/movie-lists.png)
 
 ## Project Structure
 
@@ -63,8 +65,4 @@ This project uses [The Movie Database (TMDB)](https://www.themoviedb.org/) API.
 VITE_TMDB_API_KEY=your_tmdb_api_key_here
 ```
 
-## Important
-
-- Do not commit your real API key to version control.
-- Use your own TMDB API key for the app to work correctly.
 
